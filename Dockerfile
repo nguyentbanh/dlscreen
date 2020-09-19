@@ -9,7 +9,7 @@ RUN pip install -r requirements.txt
 
 FROM python:3.8-slim
 WORKDIR /code
-COPY --from=builder /root/.local/bin /root/.local
+COPY --from=compile-image /opt/venv /opt/venv
 COPY ./src .
 ENV PATH="/opt/venv/bin:$PATH"
 

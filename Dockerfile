@@ -6,6 +6,8 @@ FROM python:3.8 AS builder
 #RUN pip install --user -r requirements.txt
 RUN pip install --user click selenium fitz natsort
 RUN ls /root/.local/bin
+RUN pip show click
+RUN pip show selenium
 
 FROM python:3.8-slim
 WORKDIR /code

@@ -5,13 +5,16 @@ FROM python:3.8 AS builder
 # install dependencies
 #RUN pip install --user -r requirements.txt
 RUN pip install --user click selenium fitz natsort
+RUN ls /root/.local/bin
 
 FROM python:3.8-slim
 WORKDIR /code
 
-COPY --from=builder /root/.local/bin /root/.local/bin
+COPY --from=builder /root/.local/bin /root/.local
 COPY ./src .
+RUN ls /root/.local
 
 ENV PATH=/root/.local:$PATH
+RUN echo $PATH
 
 CMD [ "python", "./capture.py"  ]

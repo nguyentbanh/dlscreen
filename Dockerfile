@@ -4,7 +4,7 @@ FROM python:3.8 AS builder
 
 # install dependencies
 #RUN pip install --user -r requirements.txt
-RUN pip install --user click selenium fitz natsort
+RUN pip install click selenium fitz natsort
 
 FROM python:3.8-slim
 WORKDIR /code

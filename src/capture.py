@@ -1,9 +1,10 @@
-import time, os, click
+import time, os
 from pdf import pdf
 from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
+import click
 
 
 def capture():

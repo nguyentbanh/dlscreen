@@ -1,6 +1,6 @@
 # first stage
 FROM python:3.8 AS builder
-#COPY requirements.txt .
+COPY requirements.txt .
 
 # install dependencies
 RUN pip install --user -r requirements.txt
